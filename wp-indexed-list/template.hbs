@@ -1,0 +1,18 @@
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        {{#index}}
+            <li role="presentation" class="{{classes}}"><a href="#{{{refId}}}" aria-controls="{{{refId}}}" role="tab" data-toggle="tab">{{value}}</a></li>
+        {{/index}}
+    </ul>
+
+    <div class="tab-content">
+        {{#list}}
+            <div role="tabpanel" class="tab-pane {{classes}}" id="{{{refId}}}">
+                <h2>{{{index}}}</h2>
+                {{#items}}
+                    <a href="{{{url}}}"><h3>{{{title}}}</h3></a>
+                {{/items}}
+            </div>
+        {{/list}}
+    </div>
+</div>
