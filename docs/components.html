@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="sg">
+
+<head>
+  <meta charset="utf-8">
+  <title>Styledown</title>
+  <link rel="stylesheet" href="styledown/css/styleguide.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../blaze-components.min.css">
+</head>
+
+<body class="sg">
+  <div class="sg-menu">
+    <div class="sg-title">Blaze Components</div>
+    <nav class="sg-toc"></nav>
+  </div>
+  <div class="sg-content">
+    <div>
+      <section class="sg-section sg-section-introduction">
+        <h2 id="introduction" class="sg">Introduction</h2>
+        <p class="sg">Below are all components in alphabetical order, grouped by type.</p>
+        <p class="sg">All components are provided with very minimal styling. The sole purpose of this styling is to give components some form and shape so it will be understandable how it works. It is expected that developers who will be using these components will apply final styling.</p>
+        <p class="sg">Components are using
+          <a href="http://getbem.com" class="sg">BEM</a>
+          <a href="http://getbem.com/naming/" class="sg">naming convention</a>.</p>
+        <p class="sg">If components have any external dependencies, those are listed for each component individually.</p>
+      </section>
+
+      <section class="sg-section sg-section-ui-components">
+        <h2 id="ui-components" class="sg">UI Components</h2>
+        <p class="sg">UI components are mostly about visual style and appearance. They rarely has any back end data CRUD functionality.</p>
+        <section class="sg-block sg-section-fold-open">
+          <div class="sg-text">
+            <h3 id="fold-open" class="sg">Fold-Open</h3>
+            <p class="sg">Fold-Open component reveals its inner content when clicked on. A second click will hide its inner content. If hovered over, it opens slightly allowing to pick at what&apos;s inside.</p>
+            <p class="sg">This component uses CSS3 animations and some JavaScript to switch between opened and closed states. In open state, a
+              <code class="sg">.open</code>class is assigned at the top-level component&apos;s HTML element.</p>
+            <p class="sg">Please note that currently content of both front end and back end parts of the component has been provided twice. This is because the same content should be shown on both sides at the left and at the right from the fold.</p>
+            <p class="sg">Here is how the minimal HTML of the component looks:</p>
+            <p class="sg">CSS styles:
+              <a href="../components/ui/fold-open/fold-open.scss" class="sg">fold-open.scss</a>
+            </p>
+            <p class="sg">JavaScript:
+              <a href="../components/ui/fold-open/fold-open.js" class="sg">fold-open.js</a>
+            </p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="blaze-fold-open blaze-fold-open--default" data-blaze-fold-open="">
+                <div class="blaze-fold-open__item-wrapper-front">
+                  <div class="blaze-fold-open__item-mask-left-front">
+                    <div class="blaze-fold-open__item-inner-left-front">
+                      <p>Front end content goes here</p>
+                    </div>
+                  </div>
+                  <div class="blaze-fold-open__item-mask-right-front">
+                    <div class="blaze-fold-open__item-inner-right-front">
+                      <p>Front end content goes here</p>
+                      <span class="blaze-fold-open__item-inner-shadow"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="blaze-fold-open__item-wrapper-back">
+                  <div class="blaze-fold-open__item-mask-left-back">
+                    <div class="blaze-fold-open__item-inner-left-back">
+                      <p>Back end content goes here</p>
+                    </div>
+                  </div>
+                  <div class="blaze-fold-open__item-mask-right-back">
+                    <div class="blaze-fold-open__item-inner-right-back">
+                      <p>Back end content goes here</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open blaze-fold-open--default&quot;</span> <span class="hljs-attribute">data-blaze-fold-open</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-wrapper-front&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-mask-left-front&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-inner-left-front&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Front end content goes here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-mask-right-front&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-inner-right-front&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Front end content goes here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-inner-shadow&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-wrapper-back&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-mask-left-back&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-inner-left-back&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Back end content goes here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-mask-right-back&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blaze-fold-open__item-inner-right-back&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Back end content goes here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+    </div>
+    <div class="sg-copyright">&#xA9; YULA media 2016-2017</div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script src="styledown/js/styleguide.min.js"></script>
+  <script src="../blaze-components.min.js"></script>
+</body>
+
+</html>

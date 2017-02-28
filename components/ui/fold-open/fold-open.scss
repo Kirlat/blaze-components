@@ -1,0 +1,179 @@
+.blaze-fold-open {
+    position: relative;
+    height: 220px;
+    z-index: 10;
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.blaze-fold-open:hover {
+    z-index: 1000;
+}
+
+.blaze-fold-open.open {
+    z-index: 900;
+}
+
+.blaze-fold-open__item-wrapper-front,
+.blaze-fold-open__item-wrapper-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1240px;
+    transition: z-index 0s 233.333ms;
+}
+
+.blaze-fold-open__item-wrapper-front {
+    z-index: 20;
+}
+
+.blaze-fold-open__item-wrapper-back {
+    z-index: 10;
+}
+
+.blaze-fold-open.open .blaze-fold-open__item-wrapper-front {
+    z-index: 10;
+}
+
+.blaze-fold-open.open .blaze-fold-open__item-wrapper-back {
+    z-index: 20;
+}
+
+.blaze-fold-open__item-mask-left-front,
+.blaze-fold-open__item-mask-left-back {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    right: 50%;
+    left: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: 100% 0px 0px;
+}
+
+.blaze-fold-open__item-mask-left-front {
+    transform: rotateY(0deg);
+}
+
+.blaze-fold-open__item-mask-left-back {
+    transform: rotateY(90deg);
+    transition: -webkit-transform 233.333ms linear 0ms;
+}
+
+.blaze-fold-open.open .blaze-fold-open__item-mask-left-back {
+    transform: rotateY(0deg);
+    transition: -webkit-transform 350ms ease-out 233.333ms;
+}
+
+.blaze-fold-open__item-mask-right-front,
+.blaze-fold-open__item-mask-right-back {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    right: 0;
+    left: 50%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: 0px 0px 0px;
+    transition: -webkit-transform 350ms linear;
+    transform: rotateY(0deg);
+}
+
+.blaze-fold-open__item-mask-right-front {
+    transition: -webkit-transform 350ms linear;
+}
+
+.blaze-fold-open__item-mask-right-back {
+    transition: -webkit-transform 116.667ms linear 233.333ms;
+}
+
+.blaze-fold-open:hover .blaze-fold-open__item-mask-right-front {
+    transform: rotateY(-30deg);
+    transition: -webkit-transform 116.667ms linear;
+}
+
+.blaze-fold-open.open .blaze-fold-open__item-mask-right-front {
+    transform: rotateY(-90deg);
+    transition: -webkit-transform 233.333ms linear 0ms;
+}
+
+.blaze-fold-open__item-inner-left-front,
+.blaze-fold-open__item-inner-left-back,
+.blaze-fold-open__item-inner-right-front,
+.blaze-fold-open__item-inner-right-back {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 200%;
+    text-align: center;
+}
+
+.blaze-fold-open__item-inner-left-front,
+.blaze-fold-open__item-inner-left-back {
+    left: 0;
+}
+
+.blaze-fold-open__item-inner-right-front,
+.blaze-fold-open__item-inner-right-back {
+    right: 0;
+}
+
+.blaze-fold-open__item-inner-shadow {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: #000000;
+    transition: opacity 350ms linear;
+}
+
+.blaze-fold-open:hover .blaze-fold-open__item-inner-shadow {
+    transition: opacity 116.667ms linear;
+    opacity: 0.1;
+}
+
+.blaze-fold-open.open .blaze-fold-open__item-inner-shadow {
+    transition: opacity 350ms linear 0ms;
+    opacity: 0.25;
+}
+
+// Default visual site
+
+.blaze-fold-open--default {
+    color: #393F4C;
+    background-color: #F2F2F2;
+    border-right: 1px solid #D4D4D4;
+    border-bottom: 1px solid #D4D4D4;
+}
+
+.blaze-fold-open--default .blaze-fold-open__item-inner-left-front,
+.blaze-fold-open--default .blaze-fold-open__item-inner-right-front {
+    background: #F2F2F2;
+}
+
+.blaze-fold-open--default .blaze-fold-open__item-inner-left-back,
+.blaze-fold-open--default .blaze-fold-open__item-inner-right-back {
+    color: #FFF;
+    background-color: #484745;
+}
+
+.blaze-fold-open--default .blaze-fold-open__item-inner-left-front,
+.blaze-fold-open--default .blaze-fold-open__item-inner-left-back,
+.blaze-fold-open--default .blaze-fold-open__item-inner-right-front,
+.blaze-fold-open--default .blaze-fold-open__item-inner-right-back {
+    padding: 80px 0 30px;
+}
