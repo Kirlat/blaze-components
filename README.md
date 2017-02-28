@@ -3,4 +3,4 @@ A library of reusable front end components. The goal of creating this library wa
 
 Each component is independent from the other. However, some components may have external dependencies. In cases like this such dependencies will be listed for each component individually.
 
-Please check [documentation](docs/components.html) for information about individual components.
+Please check [documentation](https://cdn.rawgit.com/kirlat/blaze-components/8bb666b9/docs/components.html) for information about individual components.
